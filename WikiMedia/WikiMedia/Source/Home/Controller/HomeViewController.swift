@@ -9,10 +9,9 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         doInitialSetup()
     }
     
@@ -22,25 +21,17 @@ class HomeViewController: BaseViewController {
     
     private func doInitialSetup() {
         setUpNavigationBar()
+        moveToSearchViewController()
     }
     
     override func setUpNavigationBar() {
         super.setUpNavigationBar()
-        
         navigationItem.title = PageTitleConstant.wikiMedia
     }
     
     private func moveToSearchViewController() {
         guard let searchVC = SearchViewController.searchViewController() else { return }
-        
-        navigationController?.pushViewController(searchVC, animated: true)
-    }
-}
-
-extension HomeViewController: UISearchBarDelegate {
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        moveToSearchViewController()
-        return false
+        navigationController?.pushViewController(searchVC, animated: false)
     }
 }
 

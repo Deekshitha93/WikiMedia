@@ -12,7 +12,6 @@ import ObjectMapper
 typealias SearchCompletionCallback = (_ success: Bool, _ response: SearchResponse?, _ error: Error?) -> Void
 
 extension ApiManager {
-    
     func getSearchResult(of term: String?, completionCallBack: @escaping SearchCompletionCallback) {
         guard let searchTerm = term else {
             completionCallBack(false, nil, nil)

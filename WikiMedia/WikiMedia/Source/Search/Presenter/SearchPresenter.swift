@@ -34,7 +34,7 @@ class SearchPresenter: NSObject {
                 self?.searchResults = response?.query?.pages
                 self?.presenterOutput?.updateUI()
             } else {
-                
+                // Handle error
             }
         }
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77160F28CD491F5B10705931 /* Pods_WikiMediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0D0454808AB97A276EE96A /* Pods_WikiMediaUITests.framework */; };
+		7912D6FC2172F234007A098D /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912D6FB2172F234007A098D /* SearchDetailViewController.swift */; };
+		7912D6FE2172F25A007A098D /* SearchDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912D6FD2172F25A007A098D /* SearchDetailPresenter.swift */; };
 		792D09E521609F7000C52A84 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D09E421609F7000C52A84 /* HomePresenter.swift */; };
 		792D09EC21609FFC00C52A84 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D09EB21609FFC00C52A84 /* SearchResponse.swift */; };
 		792D09F02160A18200C52A84 /* SearchResultPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D09EF2160A18200C52A84 /* SearchResultPage.swift */; };
@@ -62,6 +64,8 @@
 		2E2FAE1C179BDE72A04494A2 /* Pods_WikiMediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WikiMediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D66E083947D34990EC67E8D /* Pods-WikiMediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiMediaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiMediaUITests/Pods-WikiMediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5947A561C8B39EAC7B53ABD5 /* Pods-WikiMediaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiMediaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiMediaTests/Pods-WikiMediaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7912D6FB2172F234007A098D /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		7912D6FD2172F25A007A098D /* SearchDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailPresenter.swift; sourceTree = "<group>"; };
 		792D09E421609F7000C52A84 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		792D09EB21609FFC00C52A84 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		792D09EF2160A18200C52A84 /* SearchResultPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPage.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				792D09F72160A58400C52A84 /* SearchPresenter.swift */,
+				7912D6FD2172F25A007A098D /* SearchDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				792D09F52160A56600C52A84 /* SearchViewController.swift */,
+				7912D6FB2172F234007A098D /* SearchDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -694,10 +700,12 @@
 				797E5D1C215FCD2200344F87 /* ApiRequestable.swift in Sources */,
 				797E5D17215FCCC800344F87 /* ApiManager.swift in Sources */,
 				792D09F42160A1DE00C52A84 /* TermsDetail.swift in Sources */,
+				7912D6FC2172F234007A098D /* SearchDetailViewController.swift in Sources */,
 				792D0A042160D15F00C52A84 /* SearchResultTableViewCell.swift in Sources */,
 				792D09FF2160ABBA00C52A84 /* UIConstants.swift in Sources */,
 				797E5D1E215FCD6200344F87 /* BaseResponse.swift in Sources */,
 				797E5D19215FCCDC00344F87 /* BaseModel.swift in Sources */,
+				7912D6FE2172F25A007A098D /* SearchDetailPresenter.swift in Sources */,
 				797E5CDF215FC89E00344F87 /* AppDelegate.swift in Sources */,
 				792D09F02160A18200C52A84 /* SearchResultPage.swift in Sources */,
 				792D09F22160A1AA00C52A84 /* ThumbnailDetail.swift in Sources */,
@@ -875,8 +883,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4MRT5KL8R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/WikiMedia/Resource/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -897,8 +905,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4MRT5KL8R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/WikiMedia/Resource/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

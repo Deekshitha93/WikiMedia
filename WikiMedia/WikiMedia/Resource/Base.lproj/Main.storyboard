@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,28 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gWg-0D-kdr">
-                                <rect key="frame" x="15" y="306" width="345" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ull-1p-C6I"/>
-                                </connections>
-                            </searchBar>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="gWg-0D-kdr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8lK-iv-rEo"/>
-                            <constraint firstItem="gWg-0D-kdr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="90b-0x-1q5"/>
-                            <constraint firstItem="gWg-0D-kdr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-30" id="Ggd-st-S7s"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ojC-Mn-xZR">
                         <barButtonItem key="backBarButtonItem" title=" " id="nYm-Wz-gUP"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="N4Z-pG-FGN" id="Fp1-a9-Oh1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="N4Z-pG-FGN">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="5Fa-fI-ApQ"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="IQi-6e-dr8"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="xnK-4F-KZc"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="6TW-vr-Ggn"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-654" y="-404"/>
         </scene>
@@ -56,12 +52,12 @@
                                     <constraint firstAttribute="height" constant="44" id="SyU-NV-kB9"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem id="XHa-ar-i0Y">
-                                        <barButtonItem key="backBarButtonItem" title=" " id="a3b-G8-8Jx"/>
+                                    <navigationItem title=" " id="XHa-ar-i0Y">
+                                        <barButtonItem key="backBarButtonItem" title="  " id="a3b-G8-8Jx"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OL8-7A-njS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OL8-7A-njS">
                                 <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -87,6 +83,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KD2-wy-uu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81" y="-1079"/>
+        </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="CYu-JB-XjC">
+            <objects>
+                <viewController storyboardIdentifier="SearchDetailViewController" id="Tce-BL-k3H" customClass="SearchDetailViewController" customModule="WikiMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2yx-dQ-sg9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wu-u3-SBw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bvY-X5-fk5"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title=" " id="sXe-Xh-QwL">
+                                        <barButtonItem key="backBarButtonItem" title="  " id="MgK-WG-QKx"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rXH-YF-osk" firstAttribute="trailing" secondItem="0wu-u3-SBw" secondAttribute="trailing" id="ONn-L7-gk2"/>
+                            <constraint firstItem="0wu-u3-SBw" firstAttribute="leading" secondItem="rXH-YF-osk" secondAttribute="leading" id="Pvn-Xq-4RB"/>
+                            <constraint firstItem="0wu-u3-SBw" firstAttribute="top" secondItem="rXH-YF-osk" secondAttribute="top" id="T4h-ct-1i8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rXH-YF-osk"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="0wu-u3-SBw" id="Wec-x5-yUM"/>
+                        <outlet property="navigationBarHeight" destination="bvY-X5-fk5" id="DUJ-Qt-hrH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oR-IA-g50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="-1077"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uJc-an-mFd">

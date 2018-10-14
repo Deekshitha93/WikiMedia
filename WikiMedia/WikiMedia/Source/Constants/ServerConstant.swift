@@ -49,6 +49,10 @@ struct SearchResponseConstant {
     static let terms = "terms"
 }
 
+struct PageDetailRequestConstant {
+
+}
+
 struct ThumbnailDetailConstant {
     static let source = "source"
     static let width = "width"
@@ -62,6 +66,6 @@ struct TermDetailConstant {
 }
 
 enum SearchRequestProp: String {
-    case pageImages = "pageimage"
+    case pageImages = "pageimages"
     case pageterms = "pageterms"
 }

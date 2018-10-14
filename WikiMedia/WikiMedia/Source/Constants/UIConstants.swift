@@ -18,4 +18,9 @@ struct PageTitleConstant {
 
 struct ImageNameConstant {
     static let placeHolder = "noimage"
+    static let wikiLogo = "wiki-logo"
+}
+
+struct MessageConstant {
+    static let noSearchResult = "No result available for "
 }
