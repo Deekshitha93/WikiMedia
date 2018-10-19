@@ -75,6 +75,7 @@ extension SearchRequestable {
     // Add neccessary parameters to get the page details.
     private func getPageDetailParameters(page: SearchResultPage) -> ApiParams? {
         var parameters = ApiParams()
+        parameters["titles"] = page.title ?? ""
         
         return parameters
     }

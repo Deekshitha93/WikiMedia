@@ -23,4 +23,5 @@ struct ImageNameConstant {
 
 struct MessageConstant {
     static let noSearchResult = "No result available for "
+    static let enterSearchTerm = "Please enter search term"
 }

@@ -106,15 +106,29 @@ class SearchViewController: BaseViewController {
     
     private func showNoResultAvailableLabel() {
         let noResultLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
-        noResultLabel.text             = MessageConstant.noSearchResult + "\"\(searchTerm ?? "")\""
-        noResultLabel.textColor        = UIColor.black
-        noResultLabel.textAlignment    = .center
+        noResultLabel.text = isSearchTermEntered() ? MessageConstant.noSearchResult + "\"\(searchTerm ?? "")\"" : MessageConstant.enterSearchTerm
+        noResultLabel.textColor = UIColor.black
+        noResultLabel.textAlignment = .center
         tableView.backgroundView = noResultLabel
+    }
+    
+    private func checkForSearchItems() {
+        let numberOfItems = presenter?.numberOfSearchResults() ?? 0
+        if numberOfItems == 0 {
+            showNoResultAvailableLabel()
+        }
+    }
+    
+    private func isSearchTermEntered() -> Bool {
+        guard searchTerm != nil else { return false }
+        guard let text = searchTerm,  text != "" else { return false }
+        return true
     }
 }
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        checkForSearchItems()
         return presenter?.numberOfSearchResults() ?? 0
     }
     
@@ -144,11 +158,6 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: SearchPresenterOutput {
     func updateUI() {
         hideLoadingIndicator()
-        
-        let numberOfItems = presenter?.numberOfSearchResults() ?? 0
-        if numberOfItems == 0 {
-           showNoResultAvailableLabel()
-        }
         tableView.reloadData()
     }
 }
@@ -161,6 +170,7 @@ extension SearchViewController: UISearchControllerDelegate {
     func didPresentSearchController(_ searchController: UISearchController) {
         searchController.searchBar.becomeFirstResponder()
     }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -175,5 +185,10 @@ extension SearchViewController: UISearchBarDelegate {
         let searchText = searchBar.text
         searchTerm = searchText
         presenter?.fetchSearchResult(of: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchTerm = ""
+        presenter?.discardSearchResult()
     }
 }

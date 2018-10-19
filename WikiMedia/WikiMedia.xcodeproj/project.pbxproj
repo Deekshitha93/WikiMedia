@@ -160,7 +160,6 @@
 			children = (
 				24D8D3152179C2880073BB40 /* Source */,
 				24D8D3142179C27E0073BB40 /* Resource */,
-				24D8D2ED2179C1F60073BB40 /* Assets.xcassets */,
 			);
 			path = WikiMedia;
 			sourceTree = "<group>";
@@ -186,6 +185,7 @@
 		24D8D3142179C27E0073BB40 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				24D8D2ED2179C1F60073BB40 /* Assets.xcassets */,
 				24D8D3592179C4500073BB40 /* Search */,
 				24D8D3552179C4180073BB40 /* LaunchScreen.storyboard */,
 				24D8D3562179C4180073BB40 /* Main.storyboard */,

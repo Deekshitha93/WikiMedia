@@ -12,6 +12,7 @@ protocol SearchPresenterInput: class {
     func numberOfSearchResults() -> Int
     func page(at index: Int?) -> SearchResultPage?
     func fetchSearchResult(of term: String?)
+    func discardSearchResult()
 }
 
 protocol SearchPresenterOutput: class {
@@ -55,5 +56,10 @@ extension SearchPresenter: SearchPresenterInput {
         guard itemIndex >= 0, itemIndex < searchList.count else { return nil }
         
         return searchList[itemIndex]
+    }
+    
+    func discardSearchResult() {
+        searchResults?.removeAll()
+        self.presenterOutput?.updateUI()
     }
 }

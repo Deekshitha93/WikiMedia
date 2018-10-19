@@ -23,7 +23,6 @@ enum HttpMethodName {
 }
 
 class ApiManager {
-    
     func excecute(request: ApiRequestable, completion: @escaping ApiResponse) {
         guard let urlString = request.baseUrl, let httpMethod = request.methodName?.httpMethod else {
             completion(false, nil, nil)
