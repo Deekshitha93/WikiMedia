@@ -2,8 +2,8 @@
 //  WikiMediaUITests.swift
 //  WikiMediaUITests
 //
-//  Created by Prajna G Hegde on 29/09/18.
-//  Copyright © 2018 Sample. All rights reserved.
+//  Created by Deekshitha on 19/10/18.
+//  Copyright © 2018 Deekshitha. All rights reserved.
 //
 
 import XCTest
